@@ -58,7 +58,7 @@ fi
 
 # Variables and choosing the mirror.
 echo -e "Choosing best mirror to download the files.\n"
-downloadUrls=("http://www.fahadahammed.com/extras/fonts/archieve/lsaBanglaFonts.tar.gz" "https://raw.githubusercontent.com/fahadahammed/linux-bangla-fonts/master/archieve/lsaBanglaFonts.tar.gz")
+downloadUrls=("http://www.fahadahammed.com/extras/fonts/archieve/lsaBanglaFonts.tar.gz" "https://raw.githubusercontent.com/4r6h/linux-bangla-fonts/master/archieve/LinuxBanglaFonts.tar.gz")
 finalurl="" # it will select lowest latency mirror
 
 # Get arrays of latency and plain urls.
@@ -127,11 +127,11 @@ echo -e "\n"
 
 # Check if file is there and extractable
 cd $fontsDir"/"
-if [ -f lsaBanglaFonts.tar.gz ];
+if [ -f LinuxBanglaFonts.tar.gz ];
 then
     echo -e "Downloaded file successfully to extract and install fonts !\n";
-    tar -zxvf lsaBanglaFonts.tar.gz;
-    rm lsaBanglaFonts.tar.gz;
+    tar -zxvf LinuxBanglaFonts.tar.gz;
+    rm LinuxBanglaFonts.tar.gz;
 else
     echo -e "Fonts couldn't be retrieved. So exiting the installation.\n";
     exit;

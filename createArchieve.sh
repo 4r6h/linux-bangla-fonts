@@ -11,14 +11,14 @@
 
 archieveFolder="archieve"
 fontsFolder="fonts"
-archieveName="lsaBanglaFonts.tar.gz"
+archieveName="LinuxBanglaFonts.tar.gz"
 
 
 if [ -e "$archieveFolder/$archieveName" ]; then
     echo "File exists";
     rm $archieveFolder/$archieveName;
-    cd $fontsFolder; tar -zcvf lsaBanglaFonts.tar.gz *;mv $archieveName ../$archieveFolder/;
+    cd $fontsFolder; tar -zcvf LinuxBanglaFonts.tar.gz *;mv $archieveName ../$archieveFolder/;
 else
     echo "File does not exist";
-    cd $fontsFolder; tar -zcvf lsaBanglaFonts.tar.gz *;mv $archieveName ../$archieveFolder/;
+    cd $fontsFolder; tar -zcvf LinuxBanglaFonts.tar.gz *;mv $archieveName ../$archieveFolder/;
 fi 
