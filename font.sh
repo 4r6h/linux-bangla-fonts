@@ -59,50 +59,6 @@ fi
 # Variables and choosing the mirror.
 echo -e "Choosing best mirror to download the files.\n"
 downloadUrls=("https://raw.githubusercontent.com/4r6h/linux-bangla-fonts/master/archieve/LinuxBanglaFonts.tar.gz")
-finalurl="" # it will select lowest latency mirror
-
-# Get arrays of latency and plain urls.
-point=()
-pointPlus=()
-finalu=()
-
-for i in ${downloadUrls[@]};do 
-  a=$(echo $i | sed 's|http://||g' | sed 's|https://||g' | cut -d '/' -f -1)
-  aa=$(ping -c 1 "$a" | tail -1 | awk '{print $4}' | cut -d '/' -f 2)
-  aaa=${aa%.*}
-  point+=("$aaa")
-  pointPlus+=("$aaa,$a")
-  finalu+=("$aaa,$i")
-done
-
-# Calculate Minimum Latency
-#---------------------------
-max=${point[0]}
-min=${point[0]}
-
-echo "Latency: $min milliseconds";
-
-# Loop through all elements in the array
-for i in "${finalu[@]}"
-do
-    a=$(echo $i | cut -d ',' -f 1)
-    # Update max if applicable
-    if [[ "$a" -gt "$max" ]]; then
-        max="$i"
-    fi
-
-    # Update min if applicable
-    if [[ "$a" -lt "$min" ]]; then
-        min="$i"
-    fi
-done
-finalurl=$(echo $min | cut -d ',' -f 2)
-echo -e "Final Mirror: $finalurl \n"
-
-
-
-
-
 # Directory
 echo -e "Now creating the font directory for user: $USER.\n"
 if [ $USER = "root" ]; then
@@ -123,7 +79,7 @@ fi
 echo -e "\n"
 echo -e "Downloading compressed file from $finalurl....\n"
 echo -e "\n"
-/usr/bin/wget -v -P $fontsDir"/" $finalurl
+/usr/bin/wget -v -P $fontsDir"/" $downloadUrls
 
 # Check if file is there and extractable
 cd $fontsDir"/"
