@@ -21,14 +21,13 @@ This will install a tool called lbfi in your system and you will be able to use 
 
 PyPi link: https://pypi.org/project/lbfi/
 
-### New Version (lbfi Version 1)
+### For Bangla Fonts Only
 ```bash
-wget --no-check-certificate https://raw.githubusercontent.com/4r6h/linux-bangla-fonts/master/dist/lbfi -O lbfi;chmod +x lbfi;./lbfi
+wget --no-check-certificate https://raw.githubusercontent.com/4r6h/linux-fonts/master/dist/lbfi -O lbfi;chmod +x lbfi;./lbfi
 ```
 
-### Old Version
+### For All Fonts
 ```
-wget --no-check-certificate https://raw.githubusercontent.com/4r6h/linux-bangla-fonts/master/font.sh -O font.sh;chmod +x font.sh;bash font.sh;rm font.sh
+wget --no-check-certificate https://raw.githubusercontent.com/4r6h/linux-fonts/master/font.sh -O font.sh;chmod +x font.sh;bash font.sh;rm font.sh
 ```
 
-You can find an article in: https://fahadahammed.com/single-command-to-download-and-install-all-bangla-fonts-in-your-linux/
