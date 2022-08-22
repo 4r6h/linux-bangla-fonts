@@ -106,10 +106,10 @@ echo -e "Final Mirror: $finalurl \n"
 # Directory
 echo -e "Now creating the font directory for user: $USER.\n"
 if [ $USER = "root" ]; then
-  fontsDir="/root/.fonts/lsaBanglaFonts"
+  fontsDir="/root/.fonts/LinuxBanglaFonts"
 fi
 if [ $USER != "root" ]; then
-  fontsDir="/home/$USER/.fonts/lsaBanglaFonts"
+  fontsDir="/home/$USER/.fonts/LinuxBanglaFonts"
 fi
 echo -e "\n"
 if [ ! -d "$fontsDir" ]; then
