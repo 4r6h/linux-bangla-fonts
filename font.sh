@@ -52,10 +52,6 @@ if [ ! -z "$1" ]
     fi
 fi
 
-
-# Variables and choosing the mirror.
-echo -e "Choosing best mirror to download the files.\n"
-
 urls=(
 'https://raw.githubusercontent.com/4r6h/linux-fonts/master/archieve/Linux-Bangla-Fonts.tar.gz' 
 'https://raw.githubusercontent.com/4r6h/linux-fonts/master/archieve/Linux-Urdu-Fonts.tar.gz'
@@ -94,14 +90,14 @@ fonts=(
 'Linux-Arabic-Fonts.tar.gz'
 )
 
-cd $fontsDir"/"
-if [ -f Linux-Bangla-Fonts.tar.gz || Linux-Urdu-Fonts.tar.gz || Linux-Arabic-Fonts.tar.gz ];
+cd $fontsDir
+if [[ -e "Linux-Bangla-Fonts.tar.gz" || -e "Linux-Urdu-Fonts.tar.gz" || -e "Linux-Arabic-Fonts.tar.gz" ]];
 then
 	echo -e "Downloaded file successfully to extract and install fonts !\n"
 	for font in "${fonts[@]}"; do
 		tar -zxvf $font
-		rm $fonts
 	done
+		rm ${fonts[@]}
 else
 	echo -e "Fonts couldn't be retrieved. So exiting the installation.\n"
 	exit
@@ -116,5 +112,5 @@ echo -e "\n"
 
 echo "------------------------------------"
 echo "Download and Installation Complete !!!"
-echo -e "Script is Created by Fahad Ahammed\n"
-echo -e "Website: http://fahadahammed.com\n"
+echo -e "Script is Created by 4r6h/Rahat\n"
+echo -e "Follow me on Github github.com/4r6h\n"
