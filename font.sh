@@ -57,9 +57,9 @@ fi
 echo -e "Choosing best mirror to download the files.\n"
 
 urls=(
-	"https://raw.githubusercontent.com/4r6h/linux-fonts/master/archieve/Linux-Bangla-Fonts.tar.gz" 
-	"https://raw.githubusercontent.com/4r6h/linux-fonts/master/archieve/Linux-Urdu-Fonts.tar.gz" 
-	"https://raw.githubusercontent.com/4r6h/linux-fonts/master/archieve/Linux-Arabic-Fonts.tar.gz"
+'https://raw.githubusercontent.com/4r6h/linux-fonts/master/archieve/Linux-Bangla-Fonts.tar.gz' 
+'https://raw.githubusercontent.com/4r6h/linux-fonts/master/archieve/Linux-Urdu-Fonts.tar.gz'
+'https://raw.githubusercontent.com/4r6h/linux-fonts/master/archieve/Linux-Arabic-Fonts.tar.gz'
 )
 
 # Directory
@@ -83,8 +83,8 @@ echo -e "\n"
 echo -e "Downloading compressed file from github.com....\n"
 echo -e "\n"
 
-for urls in "${urls}"; do
-/usr/bin/wget -v -P $fontsDir"/" $urls
+for url in "${urls}"; do
+/usr/bin/wget -v -P $fontsDir"/" $url
 done
 
 # Check if file is there and extractable
@@ -98,8 +98,8 @@ cd $fontsDir"/"
 if [ -f Linux-Bangla-Fonts.tar.gz || Linux-Urdu-Fonts.tar.gz || Linux-Arabic-Fonts.tar.gz ];
 then
 	echo -e "Downloaded file successfully to extract and install fonts !\n"
-	for fonts in "${fonts[@]}"; do
-		tar -zxvf $fonts
+	for font in "${fonts[@]}"; do
+		tar -zxvf $font
 		rm $fonts
 	done
 else
