@@ -65,10 +65,10 @@ urls=(
 # Directory
 echo -e "Now creating the font directory for user: $USER.\n"
 if [ $USER = "root" ]; then
-  fontsDir="/root/.fonts/Linux-Fonts"
+  fontsDir="/root/.fonts/Linux-Fonts/"
 fi
 if [ $USER != "root" ]; then
-  fontsDir="/home/$USER/.fonts/Linux-Fonts"
+  fontsDir="/home/$USER/.fonts/Linux-Fonts/"
 fi
 echo -e "\n"
 if [ ! -d "$fontsDir" ]; then
@@ -83,8 +83,8 @@ echo -e "\n"
 echo -e "Downloading compressed file from github.com....\n"
 echo -e "\n"
 
-for url in "${urls}"; do
-/usr/bin/wget -v -P $fontsDir"/" $url
+for url in "${urls[@]}"; do
+/usr/bin/wget -P $fontsDir "$url"
 done
 
 # Check if file is there and extractable
