@@ -1,1 +1,4 @@
-requests
+sudo
+wget
+fontconfig
+tar
