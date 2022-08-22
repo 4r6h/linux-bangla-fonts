@@ -89,9 +89,9 @@ done
 
 # Check if file is there and extractable
 fonts=(
-Linux-Bangla-Fonts.tar.gz
-Linux-Urdu-Fonts.tar.gz
-Linux-Arabic-Fonts.tar.gz
+'Linux-Bangla-Fonts.tar.gz'
+'Linux-Urdu-Fonts.tar.gz'
+'Linux-Arabic-Fonts.tar.gz'
 )
 
 cd $fontsDir"/"
