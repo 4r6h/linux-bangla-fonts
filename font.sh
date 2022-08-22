@@ -1,14 +1,11 @@
 #!/bin/bash
-#-------------------------------
-#
-#	Created By Fahad Ahammed
-#
-# WEB: https://www.fahadahammed.com
-# Date: 2019-02-04_23-43
-#	Get me by email@fahadahammed.com or obak.krondon@gmail.com if you want to ...
-#------------------------------------------------------------------------------
 
-echo "Welcome to Bangla Font Installer from http://fahadahammed.com !!!"
+# ***************************************
+# * Author: 4r6h/Rahat		        *
+# * github: https://www.github.com/4r6h *
+# ***************************************
+
+echo "Welcome to Linux Font Installer from 4r6h/Rahat !!!"
 echo "------------------------------------"
 wgetexists=`/usr/bin/which wget`
 fontcacheexists=`/usr/bin/which fc-cache`
@@ -18,7 +15,7 @@ then
     echo -e "Sorry, you are not eligible to install these fonts.\n";\
     exit;
 fi
-echo "Now starting to download and install all Bangla fonts..........."
+echo "Now starting to download and install all fonts..........."
 echo -e "------------------------------------\n"
 echo -e "\n"
 
@@ -58,14 +55,20 @@ fi
 
 # Variables and choosing the mirror.
 echo -e "Choosing best mirror to download the files.\n"
-downloadUrls=("https://raw.githubusercontent.com/4r6h/linux-bangla-fonts/master/archieve/LinuxBanglaFonts.tar.gz")
+
+urls=(
+	"https://raw.githubusercontent.com/4r6h/linux-fonts/master/archieve/Linux-Bangla-Fonts.tar.gz" 
+	"https://raw.githubusercontent.com/4r6h/linux-fonts/master/archieve/Linux-Urdu-Fonts.tar.gz" 
+	"https://raw.githubusercontent.com/4r6h/linux-fonts/master/archieve/Linux-Arabic-Fonts.tar.gz"
+)
+
 # Directory
 echo -e "Now creating the font directory for user: $USER.\n"
 if [ $USER = "root" ]; then
-  fontsDir="/root/.fonts/LinuxBanglaFonts"
+  fontsDir="/root/.fonts/Linux-Fonts"
 fi
 if [ $USER != "root" ]; then
-  fontsDir="/home/$USER/.fonts/LinuxBanglaFonts"
+  fontsDir="/home/$USER/.fonts/Linux-Fonts"
 fi
 echo -e "\n"
 if [ ! -d "$fontsDir" ]; then
@@ -77,20 +80,31 @@ else
 fi
 
 echo -e "\n"
-echo -e "Downloading compressed file from $finalurl....\n"
+echo -e "Downloading compressed file from github.com....\n"
 echo -e "\n"
-/usr/bin/wget -v -P $fontsDir"/" $downloadUrls
+
+for urls in "${urls}"; do
+/usr/bin/wget -v -P $fontsDir"/" $urls
+done
 
 # Check if file is there and extractable
+fonts=(
+Linux-Bangla-Fonts.tar.gz
+Linux-Urdu-Fonts.tar.gz
+Linux-Arabic-Fonts.tar.gz
+)
+
 cd $fontsDir"/"
-if [ -f LinuxBanglaFonts.tar.gz ];
+if [ -f Linux-Bangla-Fonts.tar.gz || Linux-Urdu-Fonts.tar.gz || Linux-Arabic-Fonts.tar.gz ];
 then
-    echo -e "Downloaded file successfully to extract and install fonts !\n";
-    tar -zxvf LinuxBanglaFonts.tar.gz;
-    rm LinuxBanglaFonts.tar.gz;
+	echo -e "Downloaded file successfully to extract and install fonts !\n"
+	for fonts in "${fonts[@]}"; do
+		tar -zxvf $fonts
+		rm $fonts
+	done
 else
-    echo -e "Fonts couldn't be retrieved. So exiting the installation.\n";
-    exit;
+	echo -e "Fonts couldn't be retrieved. So exiting the installation.\n"
+	exit
 fi
 
 cd

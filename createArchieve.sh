@@ -1,46 +1,39 @@
 #!/bin/bash
-#-------------------------------
-#
-# Archieve Creator
-#
-#	Created By Fahad Ahammed
-#
-#	Get me by email@fahadahammed.com or obak.krondon@gmail.com if you want to ...
-#-------------------------------
 
+# ***************************************
+# * Author: 4r6h/Rahat		        *
+# * github: https://www.github.com/4r6h *
+# ***************************************
 
 archieveFolder="archieve"
 BanglaFolder="Bangla-Fonts"
 UrduFolder="Urdu-Fonts"
 ArabicFolder="Arabic-Fonts"
-archieveBangla="LinuxBanglaFonts.tar.gz"
-archieveUrdu="LinuxUrduFonts.tar.gz"
-archieveArabic="LinuxArabicFonts.tar.gz"
+archieveBangla="Linux-Bangla-Fonts.tar.gz"
+archieveUrdu="Linux-Urdu-Fonts.tar.gz"
+archieveArabic="Linux-Arabic-Fonts.tar.gz"
 
-#if [ -e "$archieveFolder/$archiveBangla" ]; then
-#    echo "File exists";
-#    rm $archieveFolder/$archiveBangla;
-#    cd $BanglaFolder; tar -zcvf LinuxBanglaFonts.tar.gz *;mv $archieveBangla ../$archieveFolder/;
-#else
-#    echo "File does not exist";
-#    cd $BanglaFolder; tar -zcvf LinuxBanglaFonts.tar.gz *;mv $archieveBangla ../$archieveFolder/;
-#fi 
+Folders=(
+	"$BanglaFolder"
+	"$ArabicFolder"
+	"$UrduFolder"
+)
 
-if [ -e $archieveFolder/$archiveUrdu ]; then
-    echo File exists
-    rm archieve/LinuxUrduFonts.tar.gz
-    cd $UrduFolder; tar -zcvf LinuxUrduFonts.tar.gz *;mv $archieveUrdu ../$archieveFolder/
-elif [ ! -e $archieveFolder/$archiveUrdu ]; then
-    echo File does not exist
-    cd $UrduFolder; tar -zcvf LinuxUrduFonts.tar.gz *;mv $archieveUrdu ../$archieveFolder/
-fi 
 
-#if [ -e "$archieveFolder/$archiveArabic" ]; then
-#    echo "File exists";
-#    rm $archieveFolder/$archiveArabic;
-#    cd $ArabicFolder; tar -zcvf LinuxArabicFonts.tar.gz *;mv $archieveArabic ../$archieveFolder/;
-#else
-#    echo "File does not exist";
-#    cd $ArabicFolder; tar -zcvf LinuxArabicFonts.tar.gz *;mv $archieveArabic ../$archieveFolder/;
-#fi 
-#
+
+for i in "${Folders[@]}"; do
+    echo "COPYING: ${i}"
+
+if [ -d "${i}" ]
+then
+	if [ "$(ls -A ${i})" ]; then
+     echo "Take action ${i} is not Empty"
+     tar -czvf Linux-"${i}".tar.gz "${i}"
+     mv Linux-"${i}".tar.gz $archieveFolder
+	else
+    echo "${i} is Empty"
+	fi
+else
+	echo "Directory ${i} not found."
+fi
+done
