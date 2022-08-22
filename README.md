@@ -1,4 +1,4 @@
-# Bangla Fonts for your Linux Machine
+# Bangla, Urdu and Arabic Fonts for your Linux Machine
 
 Welcome to Bangla font installer for linux. This script is tested or maintained only for Debian based distributions like Ubuntu, Debian, Linux Mint, Deepin etc.
 
