@@ -91,7 +91,7 @@ fonts=(
 )
 
 cd $fontsDir
-if [[ -e "Linux-Bangla-Fonts.tar.gz" || -e "Linux-Urdu-Fonts.tar.gz" || -e "Linux-Arabic-Fonts.tar.gz" ]];
+if [ -e "Linux-Bangla-Fonts.tar.gz" || -e "Linux-Urdu-Fonts.tar.gz" || -e "Linux-Arabic-Fonts.tar.gz" ];
 then
 	echo -e "Downloaded file successfully to extract and install fonts !\n"
 	for font in "${fonts[@]}"; do
