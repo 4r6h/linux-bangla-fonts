@@ -24,16 +24,15 @@ Folders=(
 for i in "${Folders[@]}"; do
     echo "COPYING: ${i}"
 
-if [ -d "${i}" ]
-then
-	if [ "$(ls -A ${i})" ]; then
-     echo "Take action ${i} is not Empty"
-     tar -czvf Linux-"${i}".tar.gz "${i}"
-     mv Linux-"${i}".tar.gz $archieveFolder
+	if [ -d "${i}" ]; then
+		if [ "$(ls -A ${i})" ]; then
+			echo "Take action ${i} is not Empty"
+	     		tar -czvf Linux-"${i}".tar.gz "${i}"
+     			mv Linux-"${i}".tar.gz $archieveFolder
+		else
+			echo "${i} is Empty"
+		fi
 	else
-    echo "${i} is Empty"
-	fi
-else
-	echo "Directory ${i} not found."
-fi
+		echo "Directory ${i} not found."
+	fi	
 done
