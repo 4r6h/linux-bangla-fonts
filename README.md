@@ -31,16 +31,24 @@ wget --no-check-certificate https://raw.githubusercontent.com/4r6h/linux-fonts/m
 
 ### For Arch Based All Fonts
 
-```
+**Step 1**
+```bash
 sudo pacman -S sudo tar fontconfig wget --noconfirm --needed
+```
+**Step 2**
+```bash
 wget --no-check-certificate https://raw.githubusercontent.com/4r6h/linux-fonts/master/Arch-font.sh -O Arch-font.sh;chmod +x Arch-font.sh;bash Arch-font.sh;rm Arch-font.sh
 ```
 
 
 ### For Debian Based All Fonts
 
-```
+**Step 1**
+```bash
 sudo apt install sudo tar fontconfig wget -y
+```
+**Step 2**
+```bash
 wget --no-check-certificate https://raw.githubusercontent.com/4r6h/linux-fonts/master/Debian-font.sh -O Debian-font.sh;chmod +x Debian-font.sh;bash Debian-font.sh;rm Debian-font.sh
 ```
 
