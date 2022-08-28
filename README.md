@@ -1,6 +1,6 @@
 # Bangla, Urdu and Arabic Fonts for your Linux Machine
 
-Welcome to Bangla font installer for linux. This script is tested or maintained for Arch base distributions like Arch Linux, Manjaro Linux, Arco Linux, Garuda Linux, Endeavour OS etc. And also for Debian based distributions like Ubuntu, Debian, Linux Mint, Deepin etc.
+Welcome to Bangla font installer for linux. This script is tested or maintained for Arch base distributions like Arch Linux, Manjaro Linux, Arco Linux, Garuda Linux, Endeavour OS etc. And also for Debian based distributions like Debian, Ubuntu, Linux Mint, Deepin etc.
 
 
 ### Dependency
