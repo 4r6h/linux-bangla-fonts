@@ -77,6 +77,7 @@ urls=(
 'https://raw.githubusercontent.com/4r6h/linux-fonts/master/archieve/Linux-Arabic-Fonts.tar.gz'
 'https://raw.githubusercontent.com/4r6h/linux-fonts/master/archieve/Linux-Bangla-Fonts.tar.gz' 
 'https://raw.githubusercontent.com/4r6h/linux-fonts/master/archieve/Linux-Urdu-Fonts.tar.gz'
+'https://raw.githubusercontent.com/4r6h/linux-fonts/master/archieve/Linux-Urdu-Arabic-Fonts.tar.gz'
 )
 
 # Directory
