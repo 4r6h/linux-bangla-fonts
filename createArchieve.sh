@@ -32,14 +32,17 @@ archieveFolder="archieve"
 BanglaFolder="Bangla-Fonts"
 UrduFolder="Urdu-Fonts"
 ArabicFolder="Arabic-Fonts"
+UrduArabicFolder="Urdu-Arabic-Fonts"
 archieveBangla="Linux-Bangla-Fonts.tar.gz"
 archieveUrdu="Linux-Urdu-Fonts.tar.gz"
 archieveArabic="Linux-Arabic-Fonts.tar.gz"
+archieveUrduArabic="Linux-Urdu-Arabic-Fonts.tar.gz"
 
 Folders=(
 	"$BanglaFolder"
 	"$ArabicFolder"
 	"$UrduFolder"
+	"$UrduArabicFolder"
 )
 
 
