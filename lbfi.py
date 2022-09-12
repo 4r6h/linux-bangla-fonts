@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 #
 # N: Linux Bangla Font Installer
-# C: Fahad Ahammed
+# C: 4r6h/Rahat
 #
 # ------------------------------
 import os
@@ -11,10 +11,10 @@ import base64
 import requests
 import shutil
 
-project_name = "LinuxBanglaFontInstaller"
+project_name = "LinuxFontInstaller"
 version = "1.0"
 full_project_name = project_name + "-" + version
-font_source = "https://github.com/fahadahammed/linux-bangla-fonts/raw/master/archieve/lsaBanglaFonts.tar.gz"
+font_source = "https://github.com/4r6h/linux-fonts/raw/master/archieve/Linux-Bangla-Fonts.tar.gz"
 tmp_name = str(base64.b64encode(str(str(datetime.datetime.now().isoformat()) + "_" + full_project_name).encode("utf-8")).decode("utf-8") + ".tar.gz").replace('=', '')
 extracted_folder_name = "/tmp/"
 install_folder = str(os.environ['HOME'] + "/.fonts/Linux-Bangla-Fonts")
@@ -58,7 +58,7 @@ if __name__ == "__main__":
     print(f"""
     # --------------------------
         Welcome to Linux Bangla Font Installer ! 
-        This project is initiated by Fahad Ahammed.
+        This project is initiated by 4r6h/Rahat.
         Current Version: {version}
     # --------------------------
         Installing the fonts.......
